@@ -1,9 +1,46 @@
-#content {
-  margin-left: auto;
-  margin-right: auto;
-  width: 650px;
+#content1 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
 }
 
-#greeting-container {
-  margin-top: 20px;
+#header {
+    text-align: center;
+    margin: auto
+} 
+
+#title {
+    background-color: lightblue;
+    margin: auto;
+    text-align: center;
 }
+
+#quote-container {
+    margin-top: 20px;
+}
+
+.circular--square {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+#experiences {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    background-color: #cccccc;
+}
+
+#passions {
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+    background-image: url("../Images/DJ.jpg");
+    background-color: lightyellow;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
