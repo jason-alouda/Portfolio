@@ -17,7 +17,15 @@
  */
 function addRandomQuote() {
   const quotes =
-      ['Some infinities are greater than others', 'I think happiness is being content with who you are and what you have, whether it is the people around you, the things you do, the things you own, your lifestyle, your habits, your achievements, your failures, your flaws, your qualities, your goals, your mission, and your life. It is what you settle for when you can’t find anything better, or until you find something better. I’m not saying that being complacent will make you happy, but being able to enjoy what you have in the moment at least, will make you happy, always.', 'Can you give me a few pointers? 0x1290493, 0xA219F910....', 'qedsymbol'];
+      ['Some infinities are greater than others', 'I think happiness is being content\
+       with who you are and what you have, whether it is the people around you, the\
+        things you do, the things you own, your lifestyle, your habits, your achievements,\
+         your failures, your flaws, your qualities, your goals, your mission, and your life.\
+          It is what you settle for when you can’t find anything better, or until you find\
+           something better. I’m not saying that being complacent will make you happy, but\
+            being able to enjoy what you have in the moment at least, will make you happy,\
+             always.', 'It is vacuously true that if 1+1=3, then I am Avicii.',
+              'qedsymbol'];
 
   // Pick a random quote.
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
