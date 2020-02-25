@@ -78,3 +78,10 @@
     margin-right: auto;
     width: 650px;
 }
+
+/* will be using flex containers later for better layout */
+#flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
