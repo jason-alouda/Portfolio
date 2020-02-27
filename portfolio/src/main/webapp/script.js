@@ -13,16 +13,24 @@
 // limitations under the License.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random quote to the page.
  */
-function addRandomGreeting() {
-  const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+function addRandomQuote() {
+  const quotes =
+      ['Some infinities are greater than others', 'I think happiness is being content\
+       with who you are and what you have, whether it is the people around you, the\
+        things you do, the things you own, your lifestyle, your habits, your achievements,\
+         your failures, your flaws, your qualities, your goals, your mission, and your life.\
+          It is what you settle for when you can’t find anything better, or until you find\
+           something better. I’m not saying that being complacent will make you happy, but\
+            being able to enjoy what you have in the moment at least, will make you happy,\
+             always.', 'It is vacuously true that if 1+1=3, then I am Avicii.',
+              'qedsymbol'];
 
-  // Pick a random greeting.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
+  // Pick a random quote.
+  const quote = quotes[Math.floor(Math.random() * quotes.length)];
 
   // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
+  const quoteContainer = document.getElementById('quote-container');
+  quoteContainer.innerText = quote;
 }
