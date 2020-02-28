@@ -34,3 +34,10 @@ function addRandomQuote() {
   const quoteContainer = document.getElementById('quote-container');
   quoteContainer.innerText = quote;
 }
+
+// Fetch a greeting from server and add it to page.
+async function getGreeting() {
+  const response = await fetch('/data');
+  const quote = await response.text();
+  document.getElementById('greeting-container').innerHTML = quote;
+}
