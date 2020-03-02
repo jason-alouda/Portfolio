@@ -35,7 +35,7 @@ function addRandomQuote() {
   quoteContainer.innerText = quote;
 }
 
-// Fetch a greeting from server and add it to page.
+// Fetch greetings from server and add a random one to the page.
 async function getGreeting() {
 
   //const response = await fetch('/data');
@@ -47,5 +47,18 @@ async function getGreeting() {
     var index = Math.floor(Math.random() * 10) % greetings.length;
     greetingElem.innerHTML = greetings[index];
   });
-  
+}
+
+// Fetch comments from server and add a random one to page.
+async function getComments() {
+
+  //const response = await fetch('/data');
+  //const greeting = await response.text();
+  //document.getElementById('greeting-container').innerHTML = greeting;
+
+  fetch('/view-comments').then(response => response.json()).then((comments) => {
+    const commentElem = document.getElementById('comment-container');
+    var index = Math.floor(Math.random() * 10) % comments.length;
+    commentElem.innerText = comments[index].user_comment;
+  });
 }
