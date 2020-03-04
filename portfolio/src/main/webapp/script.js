@@ -37,7 +37,15 @@ function addRandomQuote() {
 
 // Fetch a greeting from server and add it to page.
 async function getGreeting() {
-  const response = await fetch('/data');
-  const quote = await response.text();
-  document.getElementById('greeting-container').innerHTML = quote;
+
+  //const response = await fetch('/data');
+  //const greeting = await response.text();
+  //document.getElementById('greeting-container').innerHTML = greeting;
+
+  fetch('/data').then(response => response.json()).then((greetings) => {
+    const greetingElem = document.getElementById('greeting-container');
+    const index = Math.floor(Math.random() * greetings.length)
+    greetingElem.innerHTML = greetings[index];
+  });
+  
 }
