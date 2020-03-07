@@ -44,7 +44,7 @@ async function getGreeting() {
 
   fetch('/data').then(response => response.json()).then((greetings) => {
     const greetingElem = document.getElementById('greeting-container');
-    var index = Math.floor(Math.random() * 10) % greetings.length;
+    var index = Math.floor(Math.random() * greetings.length);
     greetingElem.innerHTML = greetings[index];
   });
 }
@@ -58,7 +58,10 @@ async function getComments() {
 
   fetch('/view-comments').then(response => response.json()).then((comments) => {
     const commentElem = document.getElementById('comment-container');
-    var index = Math.floor(Math.random() * 10) % comments.length;
-    commentElem.innerText = comments[index].user_comment;
+    var i;
+    commentElem.innerText = "";
+    for (i = 0; i < comments.length; i++){
+      commentElem.innerText += comments[i].user_comment + "\n";
+    }
   });
 }

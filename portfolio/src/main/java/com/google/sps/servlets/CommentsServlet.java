@@ -29,21 +29,17 @@ import java.util.ArrayList; // import the ArrayList class
 import com.google.gson.Gson;
 
 
-
+// Persistent storage for comments
 @WebServlet("/comments")
 public class CommentsServlet extends HttpServlet {
-  private ArrayList<String> comments;
   @Override
 
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
-    // ArrayList to store comments
-    comments = new ArrayList<String>();
 
     // Get the input from the form.
     String text = getParameter(request, "text-input", "");
-    comments.add(text);
 
+    // Get timestamp
     long timestamp = System.currentTimeMillis();
 
     // Data storage
@@ -52,12 +48,6 @@ public class CommentsServlet extends HttpServlet {
     commentEntity.setProperty("timestamp", timestamp);
     DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
     datastore.put(commentEntity);
-
-    // json format file conversion
-    Gson gson = new Gson();
-    String json = gson.toJson(comments);
-    response.setContentType("application/json;");
-    response.getWriter().println(json);
   }
 
   /**

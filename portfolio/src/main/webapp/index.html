@@ -60,25 +60,25 @@
       <p>Click here to get some of my favorite quotes:</p>
         <button onclick="addRandomQuote()">Give me a quote</button>
         <div id="quote-container"></div>
-
+        <br>
         <a href="https://www.linkedin.com/in/jason-ah-chuen-569900161/">LinkedIn</a>
         <a href="https://www.facebook.com/jason.ahchuen">Facebook</a>
         <a href="https://github.com/jason-alouda">Github</a>
-    </div>
-
-    <form action="/comments" method="POST">
-      <p> Do you have any feedback or suggestions for us? </p>
-
-      <textarea name="text-input">Please enter your feedback here</textarea>
-      <br/><br/>
-
-      <input type="submit" />
-
-    </form>
-
-    <br>
-    <button onclick="getComments()">See what a previous user has to say!</button>
-    <div id="comment-container"></div>
     
+
+      <form action="/comments" method="POST">
+        <p> Do you have any feedback or suggestions for us? </p>
+
+        <textarea name="text-input">Please enter your feedback here</textarea>
+        <br/><br/>
+
+        <input type="submit"/>
+      </form>
+      <br>
+      <button onclick="getComments()">See what previous users have to say!</button>
+      <br><br>
+      <div id="comment-container"></div>
+    
+    </div>
   </body>
 </html>
