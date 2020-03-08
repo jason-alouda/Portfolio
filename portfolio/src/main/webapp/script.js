@@ -51,7 +51,7 @@ async function getGreeting() {
 
 // Fetch comments from server and add a random one to page.
 async function getComments() {
-
+  
   //const response = await fetch('/data');
   //const greeting = await response.text();
   //document.getElementById('greeting-container').innerHTML = greeting;
@@ -61,7 +61,8 @@ async function getComments() {
     var i;
     commentElem.innerText = "";
     for (i = 0; i < comments.length; i++){
-      commentElem.innerText += comments[i].user_comment + "\n";
+      commentElem.innerText += comments[i].user_comment + 
+      " (" + Math.round(comments[i].sentiment * 10)/10 + ") \n";
     }
   });
 }
