@@ -44,7 +44,7 @@ async function getGreeting() {
 
   fetch('/data').then(response => response.json()).then((greetings) => {
     const greetingElem = document.getElementById('greeting-container');
-    var index = Math.floor(Math.random() * greetings.length);
+    const index = Math.floor(Math.random() * greetings.length)
     greetingElem.innerHTML = greetings[index];
   });
 }
