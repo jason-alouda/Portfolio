@@ -22,7 +22,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList; // import the ArrayList class
 import com.google.gson.Gson;
 
-/** Servlet that returns some example content.*/
+
+
 @WebServlet("/data")
 public class DataServlet extends HttpServlet {
 
@@ -40,3 +41,6 @@ public class DataServlet extends HttpServlet {
     response.getWriter().println(json);
   }
 }
+
+
+
