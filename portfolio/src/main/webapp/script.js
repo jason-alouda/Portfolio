@@ -38,10 +38,6 @@ function addRandomQuote() {
 // Fetch greetings from server and add a random one to the page.
 async function getGreeting() {
 
-  //const response = await fetch('/data');
-  //const greeting = await response.text();
-  //document.getElementById('greeting-container').innerHTML = greeting;
-
   fetch('/data').then(response => response.json()).then((greetings) => {
     const greetingElem = document.getElementById('greeting-container');
     var index = Math.floor(Math.random() * greetings.length);
@@ -51,18 +47,13 @@ async function getGreeting() {
 
 // Fetch comments from server and add a random one to page.
 async function getComments() {
-  
-  //const response = await fetch('/data');
-  //const greeting = await response.text();
-  //document.getElementById('greeting-container').innerHTML = greeting;
 
   fetch('/view-comments').then(response => response.json()).then((comments) => {
     const commentElem = document.getElementById('comment-container');
-    var i;
     commentElem.innerText = "";
-    for (i = 0; i < comments.length; i++){
-      commentElem.innerText += comments[i].user_comment + 
-      " (" + Math.round(comments[i].sentiment * 10)/10 + ") \n";
+    for (const comment of comments){
+      commentElem.innerText += comment.user_comment + 
+      " (" + Math.round(comment.sentiment * 10)/10 + ") \n";
     }
   });
 }

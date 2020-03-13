@@ -33,7 +33,7 @@ public class ViewCommentsServlet extends HttpServlet {
       String userComment = (String) entity.getProperty("user_comment");
       long timestamp = (long) entity.getProperty("timestamp");
       double sentiment = 0;
-      if (entity.getProperty("sentiment") != null){
+      if (entity.getProperty("sentiment") != null) {
         sentiment = (double) entity.getProperty("sentiment");
       }
       Comment newComment = new Comment(id, userComment, timestamp, sentiment);
