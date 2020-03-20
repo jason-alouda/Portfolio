@@ -57,3 +57,41 @@ async function getComments() {
     }
   });
 }
+
+// Animation for marker
+function toggleBounce() {
+  if (marker.getAnimation() !== null) {
+    marker.setAnimation(null);
+  } else {
+    marker.setAnimation(google.maps.Animation.BOUNCE);
+  }
+}
+
+/** Creates a map and adds it to the page. */
+function createMap() {
+  const map = new google.maps.Map(
+      document.getElementById('map'),
+      {center: {lat: -20.16, lng: 57.50}, zoom: 12});
+
+  var contentString = '<div id="content">'+ '<h3> Home </h3>'
+  +'<div id="bodyContent">'
+  +'<p> I was born and raised here. My great grandparents moved to this place when they were middle-aged and since then the whole extended family has lived here, at least for some period of time.</p>'
+  + '</div>'
+  + '</div>';
+  const infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+
+  const marker = new google.maps.Marker({
+    map: map,
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    position: {lat: -20.16, lng: 57.50},
+    title: 'Home'
+  });
+  marker.addListener('click', toggleBounce);
+  marker.addListener('mouseover', function() {
+    infowindow.open(map, marker);
+  });
+
+}
