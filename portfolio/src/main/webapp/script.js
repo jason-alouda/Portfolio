@@ -86,12 +86,15 @@ function createMap() {
     map: map,
     draggable: false,
     animation: google.maps.Animation.DROP,
-    position: {lat: -20.16, lng: 57.50},
+    position: {lat: -20.1708, lng: 57.5046},
     title: 'Home'
   });
   marker.addListener('click', toggleBounce);
   marker.addListener('mouseover', function() {
     infowindow.open(map, marker);
+  });
+  marker.addListener('mouseout', function(){
+    infowindow.close();
   });
 
 }
